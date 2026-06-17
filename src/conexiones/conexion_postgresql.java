@@ -1,25 +1,23 @@
 
 package conexiones;
-import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 public class conexion_postgresql {
-    Connection con = null;
-    String url = "jdbc:postgresql://192.168.0.125:5432/sistema_inventario";
-    String usu = "manu";
+    Connection con = null ;
+    String url = "jdbc:postgresql://localhost:5432/sistema_inventario";
+    String usuario = "manu";
     String contra = "0011";
     
     public Connection conectar(){
         try{
-           Class.forName("org.posgresql.Driver");
-           DriverManager.getConnection(url,usu,contra);
-           
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null,"Error de conexion");
-        }
-    return con;
+            Class.forName("org.postgresql.Driver");
+            con = DriverManager.getConnection(url,usuario,contra);
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(null, "Error"+e, "Error", JOptionPane.ERROR_MESSAGE);
+        }return con;
+    
     }
 
- 
 }
