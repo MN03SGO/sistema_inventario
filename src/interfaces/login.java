@@ -1,5 +1,6 @@
 
 package interfaces;
+import DAO.dao_usuarios;
 import java.sql.Connection;
 import conexiones.conexion_postgresql;
 import interfaces.dashboard_principal;
@@ -125,41 +126,25 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txt_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usuarioActionPerformed
-
+      
     }//GEN-LAST:event_txt_usuarioActionPerformed
 
     
     private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
         String usuario = txt_usuario.getText();
         String contra = String.valueOf(txt_contra.getPassword());
-        String sql  = "select * from usuarios where nombre_usuario = ?  and contra_usuario =  ?";
         
-        try{
-            conexion_postgresql conexion = new conexion_postgresql();
-            Connection con = conexion.conectar();
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, usuario);
-            ps.setString(2,contra);
+        dao_usuarios dao = new dao_usuarios();
+        if (dao.validacionUsuario(usuario, contra)) {
+            JOptionPane.showMessageDialog(this,"Bienvendio: "+usuario);
             
-            ResultSet rs = ps.executeQuery();
+            dashboard_principal principal =new dashboard_principal();
+            principal.setVisible(true);
+            this.dispose();
             
-            if(rs.next()){
-                JOptionPane.showMessageDialog(this, "BIENVENIDO "+usuario);
-                dashboard_principal principal = new dashboard_principal();
-                principal.setVisible(true);
-                this.dispose();
-            }else{
-                JOptionPane.showMessageDialog(this, "USUARIO O CONTRA INCORRETOS");
-            }
-            rs.close();
-            ps.close();
-            con.close();
-    
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Error "+e, "Fallido", JOptionPane.ERROR_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this,"Error Usuario o contra incorrectos");
         }
-        
-        
         
         
     }//GEN-LAST:event_btn_entrarActionPerformed

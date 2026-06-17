@@ -10,13 +10,13 @@ import java.sql.SQLException;
 
 public class dao_usuarios {
     conexion_postgresql conexion  = new conexion_postgresql();
-    public boolean validacionUsuario(String usuario, String contra) throws SQLException{
+    public boolean validacionUsuario(String usuario, String contra){
         String sql= "select * from usuarios where nombre_usuario = ? and contra_usuario = ?";
         try{
             Connection con = conexion.conectar();
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(0, usuario);
-            ps.setString(1, contra);
+            ps.setString(1, usuario);
+            ps.setString(2, contra);
             
             ResultSet rs = ps.executeQuery();
             boolean existe = rs.next();
@@ -25,16 +25,12 @@ public class dao_usuarios {
             ps.close();
             con.close();
             
-            return existe();
+            return existe;
         }catch (Exception e){
-        
-        
+            System.out.println(e.getMessage());
+            return false;
+
         }
-            
-            
     }
-       
-        
-    
-    
+
 }
