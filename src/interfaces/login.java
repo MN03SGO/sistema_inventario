@@ -134,8 +134,8 @@ public class login extends javax.swing.JFrame {
         String usuario = txt_usuario.getText();
         String contra = String.valueOf(txt_contra.getPassword());
         
-        dao_usuarios dao = new dao_usuarios();
-        if (dao.validacionUsuario(usuario, contra)) {
+        dao_usuarios dao_usu = new dao_usuarios();
+        if (dao_usu.validacionUsuario(usuario, contra)) {
             JOptionPane.showMessageDialog(this,"Bienvendio: "+usuario);
             
             dashboard_principal principal =new dashboard_principal();
@@ -143,7 +143,7 @@ public class login extends javax.swing.JFrame {
             this.dispose();
             
         }else{
-            JOptionPane.showMessageDialog(this,"Error Usuario o contra incorrectos");
+        JOptionPane.showMessageDialog(this,"Error Usuario o contra incorrectos");    JOptionPane.showMessageDialog(this,"Error Usuario o contra incorrectos");
         }
         
         

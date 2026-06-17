@@ -1,0 +1,71 @@
+
+CLASSE CONEXION BD POSTGRESQL
+
+
+public class conexion_postgresql(){
+    Connection con = null;
+    String url = "jdbc:postgresql://localhost:5432/sistema_inventario";
+    String usuario = "manu";
+    String contra = "0011";
+
+    public Connection conectar(){
+        try{
+            Class.forName("org.postgresql.Driver");
+            con = DriverManager.getConnection(url,usuario,contra);
+        }catch (Exception e){
+            jOptionPane.showMessageDialog(null,"Error"+e, "Error", jOptionPane.ERROR_MESSAGE);
+
+        }return con();
+    }
+}
+
+CLASE CONEXION/DAO_USUARIOS
+
+public class dao_usuarios(){
+    conexion_postgresql conexion = new conexion_postgresql();
+
+    public boolean validarUsuario(String usuario, String contra){
+    String s    l
+    try{
+
+        Connection con = conexion.conectar();
+        PreparedStatement ps = con.preparedStatement();
+        ps.setString(0,usuario);
+        ps.setString(1,contra);
+
+        ResultSet rs = ps.executeQuery();
+        boolean existe = rs.next();
+
+        ps.close();
+        rs.close();
+        con.close();
+
+        return existe;
+    }catch(Exception e){
+        System.out.println(e.getMessage());
+        return false();
+    }
+}
+
+
+LOGICA DE CONEXION DEL LOGIN HACIA DAO_USUARIOS
+ private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {
+
+  String usuarios = txt_usuarios.getText();
+  String contra = String.valueOf(txt_contra.getPassword);
+
+  dao_usuarios dao_usu = new dao_usuarios();
+  if(dao_usuario.validacionUsuario(usuario, contra)){
+    jOptionPane.showMessageDialog("Bienvenido");
+    dashboard_principal principal = new dashboard_principal();
+    principal.setVisible(true);
+    this.dispose();
+
+
+  }else{
+    JOptionPane.showMessageDialog(this,"Error Usuario o contra incorrectos");.
+  }
+
+
+
+ }
