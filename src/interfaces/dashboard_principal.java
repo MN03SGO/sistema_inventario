@@ -30,8 +30,6 @@ public class dashboard_principal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         panelRound1.setBackground(new java.awt.Color(13, 32, 52));
-        panelRound1.setRoundBottomRight(50);
-        panelRound1.setRoundTopRight(50);
 
         btn_inicio.setBackground(new java.awt.Color(13, 32, 52));
         btn_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_DashboardPrincipal/homeX32.png"))); // NOI18N
@@ -136,7 +134,7 @@ public class dashboard_principal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1340, Short.MAX_VALUE))
+                .addGap(0, 1322, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +156,9 @@ public class dashboard_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_categoriaActionPerformed
-        // TODO add your handling code here:
+       categoria cate = new categoria();
+       cate.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btn_categoriaActionPerformed
 
     public static void main(String args[]) {

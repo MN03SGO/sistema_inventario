@@ -45,7 +45,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="panelRound1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="1340" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1322" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -61,8 +61,6 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="34" green="20" red="d" type="rgb"/>
             </Property>
-            <Property name="roundBottomRight" type="int" value="50"/>
-            <Property name="roundTopRight" type="int" value="50"/>
           </Properties>
 
           <Layout>

@@ -1,6 +1,8 @@
 
 package interfaces;
 
+import ventanas_secundarias.guardar_NuevaCategoria;
+
 public class categoria extends javax.swing.JFrame {
 
     public categoria() {
@@ -14,7 +16,7 @@ public class categoria extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        filtrar_texto_categoria = new javax.swing.JPanel();
         panelRound1 = new paneles.PanelRound();
         btn_inicio = new RSMaterialComponent.RSButtonMaterialIconDos();
         btn_categoria = new RSMaterialComponent.RSButtonMaterialIconDos();
@@ -26,6 +28,18 @@ public class categoria extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_provedor = new RSMaterialComponent.RSButtonMaterialIconDos();
         jLabel3 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        busqueda_categoria = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btn_nuevaCategoria = new javax.swing.JButton();
 
         jLabel2.setFont(new java.awt.Font("Dialog.bold", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -38,11 +52,9 @@ public class categoria extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        filtrar_texto_categoria.setBackground(new java.awt.Color(255, 255, 255));
 
         panelRound1.setBackground(new java.awt.Color(13, 32, 52));
-        panelRound1.setRoundBottomRight(50);
-        panelRound1.setRoundTopRight(50);
 
         btn_inicio.setBackground(new java.awt.Color(13, 32, 52));
         btn_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_DashboardPrincipal/homeX32.png"))); // NOI18N
@@ -148,28 +160,141 @@ public class categoria extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+
+        jButton1.setBackground(new java.awt.Color(30, 111, 217));
+        jButton1.setFont(new java.awt.Font("Dialog.bold", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Nuevo cliente");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel4.setFont(new java.awt.Font("Dialog.bold", 1, 18)); // NOI18N
+        jLabel4.setText("Gestión de Categorías");
+
+        jLabel5.setFont(new java.awt.Font("Dialog.bold", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("Administre las categorias de productos del sistema de inventario central");
+
+        jLabel6.setText("FILTRAR POR TEXTO");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("ESTADO");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Activos", "Inactivos" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "NOMBRE", "DESCRIPCION", "ESTADO"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        btn_nuevaCategoria.setFont(new java.awt.Font("Dialog.bold", 1, 14)); // NOI18N
+        btn_nuevaCategoria.setForeground(new java.awt.Color(0, 0, 0));
+        btn_nuevaCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_DashboardPrincipal/categoryX32.png"))); // NOI18N
+        btn_nuevaCategoria.setText("NUEVA CATEGORIA");
+        btn_nuevaCategoria.setBorder(null);
+        btn_nuevaCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuevaCategoriaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout filtrar_texto_categoriaLayout = new javax.swing.GroupLayout(filtrar_texto_categoria);
+        filtrar_texto_categoria.setLayout(filtrar_texto_categoriaLayout);
+        filtrar_texto_categoriaLayout.setHorizontalGroup(
+            filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(filtrar_texto_categoriaLayout.createSequentialGroup()
                 .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1453, Short.MAX_VALUE))
+                .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(filtrar_texto_categoriaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator2))
+                    .addGroup(filtrar_texto_categoriaLayout.createSequentialGroup()
+                        .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(filtrar_texto_categoriaLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(busqueda_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(filtrar_texto_categoriaLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4)
+                                    .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, filtrar_texto_categoriaLayout.createSequentialGroup()
+                                            .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel6)
+                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(30, 30, 30)
+                                            .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel7)
+                                                .addGroup(filtrar_texto_categoriaLayout.createSequentialGroup()
+                                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(btn_nuevaCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(11, 11, 11))))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1119, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap(294, Short.MAX_VALUE))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        filtrar_texto_categoriaLayout.setVerticalGroup(
+            filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(filtrar_texto_categoriaLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(busqueda_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addGap(28, 28, 28)
+                .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(filtrar_texto_categoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_nuevaCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(107, 107, 107)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(filtrar_texto_categoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(filtrar_texto_categoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -178,6 +303,16 @@ public class categoria extends javax.swing.JFrame {
     private void btn_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_categoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_categoriaActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btn_nuevaCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevaCategoriaActionPerformed
+       guardar_NuevaCategoria guardarCategoria = new guardar_NuevaCategoria(this, true);
+       guardarCategoria.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_btn_nuevaCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,14 +354,26 @@ public class categoria extends javax.swing.JFrame {
     private RSMaterialComponent.RSButtonMaterialIconDos btn_clientes;
     private RSMaterialComponent.RSButtonMaterialIconDos btn_entradas;
     private RSMaterialComponent.RSButtonMaterialIconDos btn_inicio;
+    private javax.swing.JButton btn_nuevaCategoria;
     private RSMaterialComponent.RSButtonMaterialIconDos btn_provedor;
     private RSMaterialComponent.RSButtonMaterialIconDos btn_salidas;
     private RSMaterialComponent.RSButtonMaterialIconDos btn_salir;
+    private javax.swing.JTextField busqueda_categoria;
+    private javax.swing.JPanel filtrar_texto_categoria;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     private paneles.PanelRound panelRound1;
     // End of variables declaration//GEN-END:variables
 }
