@@ -39,16 +39,16 @@ public class guardar extends javax.swing.JPanel {
         CATEGORIALayout.setHorizontalGroup(
             CATEGORIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CATEGORIALayout.createSequentialGroup()
-                .addGap(261, 261, 261)
+                .addGap(200, 200, 200)
                 .addComponent(jLabel1)
-                .addContainerGap(328, Short.MAX_VALUE))
+                .addContainerGap(818, Short.MAX_VALUE))
         );
         CATEGORIALayout.setVerticalGroup(
             CATEGORIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CATEGORIALayout.createSequentialGroup()
-                .addGap(112, 112, 112)
+                .addGap(109, 109, 109)
                 .addComponent(jLabel1)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
