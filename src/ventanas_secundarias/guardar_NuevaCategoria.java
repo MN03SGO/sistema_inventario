@@ -9,7 +9,7 @@ public class guardar_NuevaCategoria extends javax.swing.JDialog {
         
         this.setSize(583, 639);
         this.setLocationRelativeTo(null);
-        this.setUndecorated(true);
+        /*this.setUndecorated(true);*/
         initComponents();
     }
 

@@ -1,19 +1,35 @@
 
 package interfaces;
 
-public class dashboard_principal extends javax.swing.JFrame {
+import interfaces.categoria;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
+import ventanas_secundarias.guardar;
+import ventanas_secundarias.guardar_NuevaCategoria;
 
+public class dashboard_principal extends javax.swing.JFrame {
+    private JPanel panelContenido;
+    
     public dashboard_principal() {
-        initComponents();
-        this.setLocation(1616, 870);
-        this.setLocationRelativeTo(null);
+       initComponents();
+       panelContenido = new JPanel(new BorderLayout());
+       panelContenido.setBackground(Color.WHITE);
+        
+
+       contenedor.setLayout(new BorderLayout());
+       contenedor.add(panelRound1, BorderLayout.WEST);
+       contenedor.add(panelContenido, BorderLayout.CENTER);
+    
+       this.setSize(1616, 870);
+       this.setLocation(0, 0);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        contenedor = new javax.swing.JPanel();
         panelRound1 = new paneles.PanelRound();
         btn_inicio = new RSMaterialComponent.RSButtonMaterialIconDos();
         btn_categoria = new RSMaterialComponent.RSButtonMaterialIconDos();
@@ -27,7 +43,7 @@ public class dashboard_principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        contenedor.setBackground(new java.awt.Color(255, 255, 255));
 
         panelRound1.setBackground(new java.awt.Color(13, 32, 52));
 
@@ -36,6 +52,11 @@ public class dashboard_principal extends javax.swing.JFrame {
         btn_inicio.setText("INICIO");
         btn_inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_inicio.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.HOME);
+        btn_inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inicioActionPerformed(evt);
+            }
+        });
 
         btn_categoria.setBackground(new java.awt.Color(13, 32, 52));
         btn_categoria.setText("CATEGORIA");
@@ -128,16 +149,16 @@ public class dashboard_principal extends javax.swing.JFrame {
                 .addGap(40, 40, 40))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorLayout.createSequentialGroup()
                 .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 1322, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -145,21 +166,32 @@ public class dashboard_principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_categoriaActionPerformed
-       categoria cate = new categoria();
-       cate.setVisible(true);
-       this.dispose();
+    if (panelContenido == null) {
+        panelContenido = new JPanel(new BorderLayout());
+        contenedor.add(panelContenido, BorderLayout.CENTER);
+    }
+    
+    panelContenido.removeAll();
+    guardar cate = new guardar();
+    panelContenido.add(cate, BorderLayout.CENTER);
+    panelContenido.revalidate();
+    panelContenido.repaint();
     }//GEN-LAST:event_btn_categoriaActionPerformed
+
+    private void btn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicioActionPerformed
+
+    }//GEN-LAST:event_btn_inicioActionPerformed
 
     public static void main(String args[]) {
 
@@ -200,8 +232,8 @@ public class dashboard_principal extends javax.swing.JFrame {
     private RSMaterialComponent.RSButtonMaterialIconDos btn_provedor;
     private RSMaterialComponent.RSButtonMaterialIconDos btn_salidas;
     private RSMaterialComponent.RSButtonMaterialIconDos btn_salir;
+    private javax.swing.JPanel contenedor;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private paneles.PanelRound panelRound1;
     // End of variables declaration//GEN-END:variables
