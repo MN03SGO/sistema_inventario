@@ -6,6 +6,7 @@ import conexiones.conexion_postgresql;
 import interfaces.dashboard_principal;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import paneles.categoria;
 import javax.swing.JOptionPane;
 
 public class login extends javax.swing.JFrame {
@@ -138,7 +139,7 @@ public class login extends javax.swing.JFrame {
         if (dao_usu.validacionUsuario(usuario, contra)) {
             JOptionPane.showMessageDialog(this,"Bienvendio: "+usuario);
             
-            dashboard_principal principal =new dashboard_principal();
+            categoria principal =new categoria();
             principal.setVisible(true);
             this.dispose();
             

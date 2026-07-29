@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SISTEMA_DE_INVENTARIO">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/SISTEMA_DE_INVENTARIO.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

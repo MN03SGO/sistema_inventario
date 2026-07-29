@@ -74,16 +74,16 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
                           <Component id="busqueda_categoria" min="-2" pref="448" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btn_NuevoCliente" min="-2" pref="118" max="-2" attributes="0"/>
+                          <Component id="btn_NuevoCliente" min="-2" pref="175" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane1" alignment="0" min="-2" pref="1119" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jScrollPane1" alignment="0" min="-2" pref="1119" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -104,9 +104,9 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -117,12 +117,12 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="busqueda_categoria" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_NuevoCliente" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btn_NuevoCliente" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="busqueda_categoria" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jSeparator2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -290,27 +290,6 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="RSMaterialComponent.RSButtonMaterialDos" name="btn_NuevoCliente">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="null"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c0" green="70" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Nuevo cliente"/>
-            <Property name="debugGraphicsOptions" type="int" value="-1"/>
-            <Property name="effectButton" type="RSMaterialComponent.RSButtonMaterialDos$EFFECTBUTTON" editor="org.netbeans.modules.form.editors.EnumEditor">
-              <Value id="RAISED"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto Bold" size="12" style="1"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NuevoClienteActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="RSMaterialComponent.RSButtonMaterialDos" name="btn_EditarCategoria">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -346,11 +325,14 @@
         </Component>
         <Component class="RSMaterialComponent.RSButtonMaterialDos" name="btn_EliminarCategoria">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="2c" red="ff" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c0" green="70" red="0" type="rgb"/>
+              <Color blue="17" green="38" red="e3" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/img/btn_globales/addX16.png"/>
@@ -377,9 +359,17 @@
             </Property>
           </Properties>
         </Component>
+        <Component class="RSMaterialComponent.RSButtonMaterialDos" name="btn_NuevoCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nuevo cliente"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NuevoClienteActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
-    <Container class="paneles.PanelRound" name="opciones">
+    <Container class="paneles_redondedos.PanelRound" name="opciones">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="34" green="20" red="d" type="rgb"/>
