@@ -8,6 +8,11 @@ public class categoria extends javax.swing.JPanel {
         this.setLocation(1616, 870);
     }
 
+    private javax.swing.ImageIcon getIcon(String resourcePath) {
+        java.net.URL location = getClass().getResource(resourcePath);
+        return location != null ? new javax.swing.ImageIcon(location) : null;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -51,7 +56,7 @@ public class categoria extends javax.swing.JPanel {
 
         btn_NuevaCategoria.setBorder(null);
         btn_NuevaCategoria.setForeground(new java.awt.Color(0, 112, 192));
-        btn_NuevaCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_NuevaCategoria.setIcon(getIcon("/img/btn_globales/addX16.png"));
         btn_NuevaCategoria.setText("Nueva categoria");
         btn_NuevaCategoria.setBorderPainted(false);
         btn_NuevaCategoria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -59,15 +64,15 @@ public class categoria extends javax.swing.JPanel {
         btn_NuevaCategoria.setEffectButton(RSMaterialComponent.RSButtonMaterialDos.EFFECTBUTTON.RAISED);
         btn_NuevaCategoria.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_NuevaCategoria.setOpaque(true);
-        btn_NuevaCategoria.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_NuevaCategoria.setPressedIcon(getIcon("/img/btn_globales/addX16.png"));
         btn_NuevaCategoria.setRequestFocusEnabled(false);
         btn_NuevaCategoria.setRolloverEnabled(false);
         btn_NuevaCategoria.setRound(25);
-        btn_NuevaCategoria.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_NuevaCategoria.setSelectedIcon(getIcon("/img/btn_globales/addX16.png"));
 
         btn_EditarCategoria.setBorder(null);
         btn_EditarCategoria.setForeground(new java.awt.Color(0, 112, 192));
-        btn_EditarCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_EditarCategoria.setIcon(getIcon("/img/btn_globales/addX16.png"));
         btn_EditarCategoria.setText("Editar");
         btn_EditarCategoria.setBorderPainted(false);
         btn_EditarCategoria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -75,16 +80,16 @@ public class categoria extends javax.swing.JPanel {
         btn_EditarCategoria.setEffectButton(RSMaterialComponent.RSButtonMaterialDos.EFFECTBUTTON.RAISED);
         btn_EditarCategoria.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_EditarCategoria.setOpaque(true);
-        btn_EditarCategoria.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_EditarCategoria.setPressedIcon(getIcon("/img/btn_globales/addX16.png"));
         btn_EditarCategoria.setRequestFocusEnabled(false);
         btn_EditarCategoria.setRolloverEnabled(false);
         btn_EditarCategoria.setRound(25);
-        btn_EditarCategoria.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_EditarCategoria.setSelectedIcon(getIcon("/img/btn_globales/addX16.png"));
 
         btn_EliminarCategoria.setBackground(new java.awt.Color(255, 44, 0));
         btn_EliminarCategoria.setBorder(null);
         btn_EliminarCategoria.setForeground(new java.awt.Color(227, 56, 23));
-        btn_EliminarCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_EliminarCategoria.setIcon(getIcon("/img/btn_globales/addX16.png"));
         btn_EliminarCategoria.setText("Eliminar");
         btn_EliminarCategoria.setBorderPainted(false);
         btn_EliminarCategoria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -92,11 +97,11 @@ public class categoria extends javax.swing.JPanel {
         btn_EliminarCategoria.setEffectButton(RSMaterialComponent.RSButtonMaterialDos.EFFECTBUTTON.RAISED);
         btn_EliminarCategoria.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_EliminarCategoria.setOpaque(true);
-        btn_EliminarCategoria.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_EliminarCategoria.setPressedIcon(getIcon("/img/btn_globales/addX16.png"));
         btn_EliminarCategoria.setRequestFocusEnabled(false);
         btn_EliminarCategoria.setRolloverEnabled(false);
         btn_EliminarCategoria.setRound(25);
-        btn_EliminarCategoria.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn_globales/addX16.png"))); // NOI18N
+        btn_EliminarCategoria.setSelectedIcon(getIcon("/img/btn_globales/addX16.png"));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

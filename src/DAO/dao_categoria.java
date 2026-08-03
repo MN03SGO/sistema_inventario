@@ -1,7 +1,7 @@
 
 package DAO;
 import CLASES.Categorias;
-import interfaces.categoria;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;

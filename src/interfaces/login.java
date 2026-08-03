@@ -139,12 +139,12 @@ public class login extends javax.swing.JFrame {
         if (dao_usu.validacionUsuario(usuario, contra)) {
             JOptionPane.showMessageDialog(this,"Bienvendio: "+usuario);
             
-            categoria principal =new categoria();
+            dashboard_principal principal =new dashboard_principal();
             principal.setVisible(true);
             this.dispose();
             
         }else{
-        JOptionPane.showMessageDialog(this,"Error Usuario o contra incorrectos");    JOptionPane.showMessageDialog(this,"Error Usuario o contra incorrectos");
+        JOptionPane.showMessageDialog(this,"Error Usuario o contra incorrectos");  
         }
         
         
