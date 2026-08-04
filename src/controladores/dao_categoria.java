@@ -15,13 +15,12 @@ public class dao_categoria {
     conexion_postgresql conexion = new conexion_postgresql();
     
     public boolean insertar_categoria(Categorias c){
-       String sql = "insert into categoria(nombre_categoria, descripcion, estado) values (?,?,?)";
+       String sql = "insert into categoria(nombre_categoria, estado) values (?,?)";
        try{
           Connection con = conexion.conectar();
           PreparedStatement ps = con.prepareStatement(sql);
           ps.setString(1, c.getNombre_categoria());
-          ps.setString(2, c.getDescripcion());
-          ps.setBoolean(3, c.isEstado());
+          ps.setBoolean(2, c.isEstado());
           
           int filas = ps.executeUpdate();
           

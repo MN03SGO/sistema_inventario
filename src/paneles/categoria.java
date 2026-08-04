@@ -106,17 +106,17 @@ public class categoria extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "ID", "NOMBRE", "DESCRIPCION", "ESTADO"
+                "ID", "NOMBRE", "ESTADO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -196,9 +196,8 @@ public class categoria extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_NuevaCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevaCategoriaActionPerformed
+        //llamada a jform "nueva_catego"
         nueva_catego dialog = new nueva_catego((java.awt.Frame)SwingUtilities.getWindowAncestor(this),true);
-        
-        
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);
         

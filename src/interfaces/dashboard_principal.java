@@ -103,8 +103,12 @@ public class dashboard_principal extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
         rSButtonMaterialIconDos6.setBackground(new java.awt.Color(204, 0, 0));
-        rSButtonMaterialIconDos6.setBorder(null);
         rSButtonMaterialIconDos6.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CLOSE);
+        rSButtonMaterialIconDos6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialIconDos6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,6 +181,10 @@ public class dashboard_principal extends javax.swing.JFrame {
     private void rSButtonMaterialIconDos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconDos2ActionPerformed
      vista_catego.show(PanelVista_principal, "categoria");
     }//GEN-LAST:event_rSButtonMaterialIconDos2ActionPerformed
+
+    private void rSButtonMaterialIconDos6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconDos6ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_rSButtonMaterialIconDos6ActionPerformed
 
     public static void main(String args[]) {
 
