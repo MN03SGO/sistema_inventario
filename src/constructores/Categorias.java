@@ -1,5 +1,5 @@
 
-package CLASES;
+package constructores;
 
 public class Categorias {
     int id_categoria;

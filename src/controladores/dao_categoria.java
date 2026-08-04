@@ -1,6 +1,6 @@
 
-package DAO;
-import CLASES.Categorias;
+package controladores;
+import constructores.Categorias;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
