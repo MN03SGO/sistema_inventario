@@ -64,7 +64,7 @@ public class nueva_catego extends javax.swing.JDialog {
         jLabel5.setFont(new java.awt.Font("Dialog.bold", 0, 14)); // NOI18N
         jLabel5.setText("Estado:");
 
-        estado_nuevaCatego.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Pendiente", "Revision", "Inexistente" }));
+        estado_nuevaCatego.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo", " " }));
 
         btn_saveNewCatego.setText("Guardar");
         btn_saveNewCatego.addActionListener(this::btn_saveNewCategoActionPerformed);

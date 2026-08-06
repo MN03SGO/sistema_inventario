@@ -4,7 +4,6 @@ package constructores;
 public class Categorias {
     int id_categoria;
     String nombre_categoria;
-
     boolean estado;
 
     public Categorias() {
