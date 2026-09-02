@@ -14,6 +14,7 @@ public class dashboard_principal extends javax.swing.JFrame {
     
     CardLayout vista_catego;
     paneles.categoria categoria = new paneles.categoria();
+    paneles.entradas entradas= new paneles.entradas();
     
     public dashboard_principal() {
     initComponents();
@@ -23,7 +24,13 @@ public class dashboard_principal extends javax.swing.JFrame {
 
     vista_catego = (CardLayout) PanelVista_principal.getLayout();
     PanelVista_principal.add(categoria, "categoria");
+    PanelVista_principal.add(entradas,"entradas");
+    
+    
+    
+    
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -91,6 +98,11 @@ public class dashboard_principal extends javax.swing.JFrame {
         rSButtonMaterialIconDos3.setBackground(new java.awt.Color(13, 32, 52));
         rSButtonMaterialIconDos3.setText("ENTRADAS");
         rSButtonMaterialIconDos3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CALL_MADE);
+        rSButtonMaterialIconDos3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMaterialIconDos3ActionPerformed(evt);
+            }
+        });
 
         rSButtonMaterialIconDos4.setBackground(new java.awt.Color(13, 32, 52));
         rSButtonMaterialIconDos4.setText("SALIDAS");
@@ -185,6 +197,10 @@ public class dashboard_principal extends javax.swing.JFrame {
     private void rSButtonMaterialIconDos6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconDos6ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_rSButtonMaterialIconDos6ActionPerformed
+
+    private void rSButtonMaterialIconDos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconDos3ActionPerformed
+       vista_catego.show(PanelVista_principal, "entradas");
+    }//GEN-LAST:event_rSButtonMaterialIconDos3ActionPerformed
 
     public static void main(String args[]) {
 

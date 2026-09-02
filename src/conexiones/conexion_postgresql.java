@@ -6,7 +6,8 @@ import javax.swing.JOptionPane;
 
 public class conexion_postgresql {
     Connection con = null ;
-    String url = "jdbc:postgresql://100.69.35.56:5432/sistema_inventario";
+    //String url = "jdbc:postgresql://100.69.35.56:5432/sistema_inventario";
+    String url = "jdbc:postgresql://localhost:5432/sistema_inventario";
     String usuario = "manu";
     String contra = "0011";
     

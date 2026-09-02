@@ -196,6 +196,9 @@
               <Value id="CALL_MADE"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMaterialIconDos3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="RSMaterialComponent.RSButtonMaterialIconDos" name="rSButtonMaterialIconDos4">
           <Properties>

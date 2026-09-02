@@ -2,15 +2,36 @@ package paneles;
 
 import controladores.dao_categoria;
 import Jdialog.categoria.nueva_catego;
+import constructores.Categorias;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 
 public class categoria extends javax.swing.JPanel {
 
     dao_categoria dao_Catego = new dao_categoria();
+    DefaultTableModel modelo_categoria = new DefaultTableModel();
 
     public categoria() {
         initComponents();
         this.setLocation(1616, 870);
+        listarCategorias();
+    }
+    
+  
+    private void listarCategorias(){
+        modelo_categoria.setRowCount(0);
+         List <Categorias> lista = dao_Catego.Listar();
+         for (Categorias c: lista){
+             Object[] fila = new Object [3];
+             fila[0] = c.getId_categoria();
+             fila[1] = c.getNombre_categoria();
+             fila[2] = c.isEstado()?"Activo":"Inactivo";
+             
+            modelo_categoria.addRow(fila);
+         }
+         
     }
 
     private javax.swing.ImageIcon getIcon(String resourcePath) {

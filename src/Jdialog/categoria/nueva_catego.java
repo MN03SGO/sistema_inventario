@@ -17,6 +17,7 @@ public class nueva_catego extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
+        id_nuevaCatego.setEditable(false);
         
         
         //Eventos del textfield
@@ -35,8 +36,8 @@ public class nueva_catego extends javax.swing.JDialog {
         id_nuevaCatego.setText("");
         nombre_nuevaCatego.setText("");
         estado_nuevaCatego.setSelectedIndex(0);
-        
         nombre_nuevaCatego.requestFocus();
+
 
 
     }
@@ -185,7 +186,7 @@ public class nueva_catego extends javax.swing.JDialog {
     }//GEN-LAST:event_btn_saveNewCategoActionPerformed
 
     private void id_nuevaCategoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_nuevaCategoActionPerformed
-        id_nuevaCatego.setEditable(false);
+        //id_nuevaCatego.setEditable(false);
     }//GEN-LAST:event_id_nuevaCategoActionPerformed
 
     /**
