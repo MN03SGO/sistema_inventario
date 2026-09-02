@@ -20,7 +20,7 @@ public class dao_categoria {
     conexion_postgresql conexion = new conexion_postgresql();
 
     public boolean insertar_categoria(Categorias c) {
-        String sql = "insert into categoria(nombre_categoria, estado) values (?,?)";
+        String sql = "insert into categorias(nombre_categoria, estado) values (?,?)";
         try {
             Connection con = conexion.conectar();
             PreparedStatement ps = con.prepareStatement(sql);

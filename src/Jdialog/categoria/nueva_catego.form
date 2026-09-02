@@ -137,6 +137,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="id_nuevaCatego">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="id_nuevaCategoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -159,10 +162,9 @@
         <Component class="javax.swing.JComboBox" name="estado_nuevaCatego">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
+              <StringArray count="2">
                 <StringItem index="0" value="Activo"/>
                 <StringItem index="1" value="Inactivo"/>
-                <StringItem index="2" value=" "/>
               </StringArray>
             </Property>
           </Properties>

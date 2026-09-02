@@ -16,6 +16,15 @@ public class nueva_catego extends javax.swing.JDialog {
     public nueva_catego(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        
+        //Eventos del textfield
+        id_nuevaCatego.addActionListener(e -> nombre_nuevaCatego.requestFocusInWindow());
+        nombre_nuevaCatego.addActionListener(e -> nombre_nuevaCatego.requestFocusInWindow());
+        
+
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -58,13 +67,15 @@ public class nueva_catego extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Dialog.bold", 0, 14)); // NOI18N
         jLabel2.setText("ID:");
 
+        id_nuevaCatego.addActionListener(this::id_nuevaCategoActionPerformed);
+
         jLabel3.setFont(new java.awt.Font("Dialog.bold", 0, 14)); // NOI18N
         jLabel3.setText("Nombre:");
 
         jLabel5.setFont(new java.awt.Font("Dialog.bold", 0, 14)); // NOI18N
         jLabel5.setText("Estado:");
 
-        estado_nuevaCatego.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo", " " }));
+        estado_nuevaCatego.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
 
         btn_saveNewCatego.setText("Guardar");
         btn_saveNewCatego.addActionListener(this::btn_saveNewCategoActionPerformed);
@@ -148,7 +159,8 @@ public class nueva_catego extends javax.swing.JDialog {
     private void exit_NewCategoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_NewCategoActionPerformed
         limpiar_campos();
     }//GEN-LAST:event_exit_NewCategoActionPerformed
-
+   
+    
     private void btn_saveNewCategoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveNewCategoActionPerformed
         String nombre = nombre_nuevaCatego.getText().trim();
         boolean estado = (estado_nuevaCatego.getSelectedIndex() == 0);
@@ -163,6 +175,7 @@ public class nueva_catego extends javax.swing.JDialog {
         if(daoCT.insertar_categoria(ct)){
             JOptionPane.showMessageDialog(this, "Categoría ingresada exitosamente.");
             limpiar_campos();        
+            this.dispose();
 
         } else 
         {
@@ -170,6 +183,10 @@ public class nueva_catego extends javax.swing.JDialog {
         }
 
     }//GEN-LAST:event_btn_saveNewCategoActionPerformed
+
+    private void id_nuevaCategoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_nuevaCategoActionPerformed
+        id_nuevaCatego.setEditable(false);
+    }//GEN-LAST:event_id_nuevaCategoActionPerformed
 
     /**
      * @param args the command line arguments

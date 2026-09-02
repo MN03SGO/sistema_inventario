@@ -15,6 +15,9 @@ public class login extends javax.swing.JFrame {
         initComponents();
         this.setSize(490, 725);
         this.setLocationRelativeTo(null);
+        //Evento de enter en texfield
+        txt_usuario.addActionListener(e  -> txt_contra.requestFocusInWindow());
+        txt_contra.addActionListener(e -> btn_entrar.requestFocusInWindow());
     }
 
 
