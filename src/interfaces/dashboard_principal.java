@@ -12,7 +12,7 @@ public class dashboard_principal extends javax.swing.JFrame {
     private JPanel panelContenido;
     
     
-    CardLayout vista_catego;
+    CardLayout vista_paneles;
     paneles.categoria categoria = new paneles.categoria();
     paneles.entradas entradas= new paneles.entradas();
     
@@ -22,11 +22,10 @@ public class dashboard_principal extends javax.swing.JFrame {
     this.setSize(1409, 773);
     this.setLocationRelativeTo(null);
 
-    vista_catego = (CardLayout) PanelVista_principal.getLayout();
+    vista_paneles = (CardLayout) PanelVista_principal.getLayout();
     PanelVista_principal.add(categoria, "categoria");
     PanelVista_principal.add(entradas,"entradas");
-    
-    
+
     
     
     }
@@ -191,7 +190,7 @@ public class dashboard_principal extends javax.swing.JFrame {
    
     
     private void rSButtonMaterialIconDos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconDos2ActionPerformed
-     vista_catego.show(PanelVista_principal, "categoria");
+     vista_paneles.show(PanelVista_principal, "categoria");
     }//GEN-LAST:event_rSButtonMaterialIconDos2ActionPerformed
 
     private void rSButtonMaterialIconDos6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconDos6ActionPerformed
@@ -199,7 +198,7 @@ public class dashboard_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_rSButtonMaterialIconDos6ActionPerformed
 
     private void rSButtonMaterialIconDos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMaterialIconDos3ActionPerformed
-       vista_catego.show(PanelVista_principal, "entradas");
+       vista_paneles.show(PanelVista_principal, "entradas");
     }//GEN-LAST:event_rSButtonMaterialIconDos3ActionPerformed
 
     public static void main(String args[]) {

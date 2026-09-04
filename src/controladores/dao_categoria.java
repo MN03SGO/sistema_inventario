@@ -39,9 +39,10 @@ public class dao_categoria {
         }
     }
     
-    public List Listar(){
+    public List <Categorias> Listar(){
         List <Categorias> lista = new ArrayList<>();
-        String sql = "select id_categoria, nombre_categoria, estado from categorias";
+        String sql = "Select * from categorias";
+        //String sql = "select id_categoria, nombre_categoria, estado from categorias";
         
         try{
             Connection con = conexion.conectar();
@@ -66,6 +67,13 @@ public class dao_categoria {
         
     
     }
+    
+    //public boolean editar(){
+      //  String sql = "insert into categorias(catego  ";
+    
+    
+    
+    
     
 
 

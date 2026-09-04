@@ -16,10 +16,16 @@ public class categoria extends javax.swing.JPanel {
     public categoria() {
         initComponents();
         this.setLocation(1616, 870);
+        modelo_categoria.addColumn("ID");
+        modelo_categoria.addColumn("NOMBRE");
+        modelo_categoria.addColumn("ESTADO");
+        tabla_categorias.setModel(modelo_categoria);
+        
         listarCategorias();
+        
+        
     }
     
-  
     private void listarCategorias(){
         modelo_categoria.setRowCount(0);
          List <Categorias> lista = dao_Catego.Listar();
@@ -56,7 +62,7 @@ public class categoria extends javax.swing.JPanel {
         btn_EditarCategoria = new RSMaterialComponent.RSButtonMaterialDos();
         btn_EliminarCategoria = new RSMaterialComponent.RSButtonMaterialDos();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_categorias = new javax.swing.JTable();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -125,7 +131,7 @@ public class categoria extends javax.swing.JPanel {
         btn_EliminarCategoria.setRolloverEnabled(false);
         btn_EliminarCategoria.setRound(25);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_categorias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -144,7 +150,7 @@ public class categoria extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla_categorias);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -222,6 +228,8 @@ public class categoria extends javax.swing.JPanel {
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);
         
+          listarCategorias();
+        
     }//GEN-LAST:event_btn_NuevaCategoriaActionPerformed
 
 
@@ -237,7 +245,7 @@ public class categoria extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabla_categorias;
     private javax.swing.JTextField txt_buscadorCatego;
     private javax.swing.JTextField txt_filtra;
     // End of variables declaration//GEN-END:variables
