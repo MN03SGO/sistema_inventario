@@ -1,5 +1,5 @@
 
-package Jdialog.categoria;
+package Jdialog.categorias;
 
 import constructores.Categorias;
 import controladores.dao_categoria;
@@ -16,7 +16,8 @@ public class nueva_catego extends javax.swing.JDialog {
     public nueva_catego(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(parent);
+        
         id_nuevaCatego.setEditable(false);
         
         
